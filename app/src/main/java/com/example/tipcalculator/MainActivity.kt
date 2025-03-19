@@ -45,7 +45,6 @@ fun TipCalculatorScreen(viewModel: TipCalculatorViewModel = viewModel()) {
 
         Spacer(modifier = Modifier.height(16.dp))
 
-        // Campo de entrada para o valor da conta
         TextField(
             value = amount,
             onValueChange = { viewModel.updateAmount(it) },
@@ -56,7 +55,6 @@ fun TipCalculatorScreen(viewModel: TipCalculatorViewModel = viewModel()) {
 
         Spacer(modifier = Modifier.height(16.dp))
 
-        // Slider de porcentagem personalizada
         Text(text = "Custom %", fontSize = 16.sp, color = Color.Black)
         Slider(
             value = customTipPercent.toFloat(),
@@ -64,7 +62,6 @@ fun TipCalculatorScreen(viewModel: TipCalculatorViewModel = viewModel()) {
             valueRange = 0f..30f
         )
 
-        // Exibir valores de referência (15% e valor customizado)
         Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween) {
             Text(text = "15%", fontSize = 14.sp, color = Color.Black)
             Text(text = "$customTipPercent%", fontSize = 14.sp, color = Color.Black)
@@ -72,7 +69,6 @@ fun TipCalculatorScreen(viewModel: TipCalculatorViewModel = viewModel()) {
 
         Spacer(modifier = Modifier.height(16.dp))
 
-        // Seção Tip e Total com labels à esquerda
         TipTotalRow("Tip (15%)", tip15)
         TipTotalRow("Tip ($customTipPercent%)", tipCustom)
         TipTotalRow("Total (15%)", totalAmount + tip15)
@@ -80,7 +76,6 @@ fun TipCalculatorScreen(viewModel: TipCalculatorViewModel = viewModel()) {
     }
 }
 
-// Componente para exibir Tip e Total com labels à esquerda e caixas centralizadas
 @Composable
 fun TipTotalRow(label: String, value: Double) {
     Row(

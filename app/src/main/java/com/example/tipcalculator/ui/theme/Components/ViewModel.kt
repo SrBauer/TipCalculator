@@ -6,7 +6,7 @@ class TipCalculatorViewModel : ViewModel() {
     private val _amount = MutableStateFlow("")
     val amount: StateFlow<String> = _amount
 
-    private val _customTipPercent = MutableStateFlow(18) // Inicia com 18%
+    private val _customTipPercent = MutableStateFlow(15)
     val customTipPercent: StateFlow<Int> = _customTipPercent
 
     fun updateAmount(newAmount: String) {
